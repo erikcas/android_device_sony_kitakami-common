@@ -132,6 +132,22 @@
 /sys/devices/soc.0/03-qcom,leds-d800/leds/wled:backlight max_brightness 0664 system system
 /sys/devices/soc.0/03-qcom,leds-d800/leds/wled:backlight brightness     0664 system system
 
+# Flash / torch
+/sys/devices/soc.0/03-somc,leds-d300 current1                           0664 media system
+/sys/devices/soc.0/03-somc,leds-d300 current2                           0664 media system
+/sys/devices/soc.0/03-somc,leds-d300 fault_status                       0664 media system
+/sys/devices/soc.0/03-somc,leds-d300 fine_current1                      0664 media system
+/sys/devices/soc.0/03-somc,leds-d300 fine_current2                      0664 media system
+/sys/devices/soc.0/03-somc,leds-d300 flash_timer                        0664 media system
+/sys/devices/soc.0/03-somc,leds-d300 mask_clamp_current                 0664 media system
+/sys/devices/soc.0/03-somc,leds-d300 mask_enable                        0664 media system
+/sys/devices/soc.0/03-somc,leds-d300 max_current                        0664 media system
+/sys/devices/soc.0/03-somc,leds-d300 mode                               0664 media system
+/sys/devices/soc.0/03-somc,leds-d300 startup_delay                      0664 media system
+/sys/devices/soc.0/03-somc,leds-d300 strobe                             0664 media system
+/sys/devices/soc.0/03-somc,leds-d300 vph_pwr_droop                      0664 media system
+
+
 /sys/devices/virtual/graphics/fb1/avi_itc             0664 system graphics
 /sys/devices/virtual/graphics/fb1/avi_cn0_1           0664 system graphics
 /sys/devices/virtual/graphics/fb1/hpd                 0664 system graphics
