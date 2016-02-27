@@ -129,6 +129,12 @@
 /sys/devices/soc.0/03-qcom,leds-d000/leds/led:* pause_low               0664 system system
 /sys/devices/soc.0/03-qcom,leds-d000/leds/led:* pwm_us                  0664 system system
 /sys/devices/soc.0/03-qcom,leds-d000/leds/led:* ramp_step_ms            0664 system system
+/sys/devices/soc.0/03-qcom,leds-d300/leds/led:* max_brightness          0664 root system
+/sys/devices/soc.0/03-qcom,leds-d300/leds/led:* brightness              0664 system system
+/sys/devices/soc.0/03-qcom,leds-d300/leds/led:* enable_current_derate   0664 system system
+/sys/devices/soc.0/03-qcom,leds-d300/leds/led:* max_allowed_current     0664 system system
+/sys/devices/soc.0/03-qcom,leds-d300/leds/led:* strobe                  0664 system system
+/sys/devices/soc.0/03-qcom,leds-d300/leds/led:* reg_dump                0664 system system
 /sys/devices/soc.0/03-qcom,leds-d800/leds/wled:backlight max_brightness 0664 system system
 /sys/devices/soc.0/03-qcom,leds-d800/leds/wled:backlight brightness     0664 system system
 
