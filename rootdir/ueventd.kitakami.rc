@@ -131,8 +131,14 @@
 /sys/devices/soc.0/03-qcom,leds-d000/leds/led:* pwm_us                  0664 system system
 /sys/devices/soc.0/03-qcom,leds-d000/leds/led:* ramp_step_ms            0664 system system
 /sys/devices/soc.0/03-qcom,leds-d000/leds/led:* start_idx               0664 system system
-/sys/devices/soc.0/03-qcom,leds-d800/leds/wled:backlight max_brightness 0664 system system
-/sys/devices/soc.0/03-qcom,leds-d800/leds/wled:backlight brightness     0664 system system
+/sys/devices/soc.0/03-qcom,leds-d800/leds/wled brightness               0664 system system
+/sys/devices/soc.0/03-qcom,leds-d800/leds/wled dim_mode                 0664 system system
+/sys/devices/soc.0/03-qcom,leds-d800/leds/wled dump_regs                0664 system system
+/sys/devices/soc.0/03-qcom,leds-d800/leds/wled fs_current_ua            0664 system system
+/sys/devices/soc.0/03-qcom,leds-d800/leds/wled max_brightness           0644 root system
+/sys/devices/soc.0/03-qcom,leds-d800/leds/wled ramp_ms                  0664 system system
+/sys/devices/soc.0/03-qcom,leds-d800/leds/wled ramp_step                0664 system system
+/sys/devices/soc.0/03-qcom,leds-d800/leds/wled start_ramp               0664 system system
 
 /sys/devices/virtual/graphics/fb1/avi_itc             0664 system graphics
 /sys/devices/virtual/graphics/fb1/avi_cn0_1           0664 system graphics
