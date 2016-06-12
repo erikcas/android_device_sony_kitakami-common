@@ -49,3 +49,18 @@ LOCAL_STATIC_LIBRARIES := \
 LOCAL_CLANG := true
 
 include $(BUILD_EXECUTABLE)
+
+ifneq ($(TARGET_LIBINIT_DEFINES_FILE),)
+include $(CLEAR_VARS)
+LOCAL_C_INCLUDES := system/core/init
+LOCAL_CPPFLAGS := \
+    -Wall \
+    -Werror -Wno-error=deprecated-declarations \
+    -Wno-unused-parameter \
+    -DANDROID_TARGET=\"$(TARGET_BOARD_PLATFORM)\"
+LOCAL_SRC_FILES := init_msm.cpp
+LOCAL_SRC_FILES += ../../../../$(TARGET_LIBINIT_DEFINES_FILE)
+LOCAL_MODULE := libsony_msm
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_STATIC_LIBRARY)
+endif
