@@ -1,14 +1,14 @@
 [
   {
-    "remote":       "omnirom",
+    "remote":       "erikcas",
     "repository":   "android_device_sony_common",
     "target_path":  "device/sony/common",
-    "revision":     "android-7.1"
+    "revision":     "android-7.1-caf"
   },
   {
     "remote":       "omnirom",
     "repository":   "android_packages_apps_SnapdragonCamera",
     "target_path":  "packages/apps/SnapdragonCamera",
-    "revision":     "android-7.1"
+    "revision":     "android-7.1-caf"
   }
 ]
