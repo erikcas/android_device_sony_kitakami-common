@@ -1,8 +1,8 @@
 [
   {
-    "remote":       "omnirom",
+    "remote":       "erikcas",
     "repository":   "android_device_sony_common",
     "target_path":  "device/sony/common",
-    "revision":     "android-7.0"
+    "revision":     "7.1-caf"
   }
 ]
