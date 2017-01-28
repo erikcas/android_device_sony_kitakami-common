@@ -182,13 +182,14 @@ service uim /system/bin/brcm-uim-sysfs
     writepid /dev/cpuset/system-background/tasks
 
 # Start Security Daemon
-service secd /system/vendor/bin/secd
-    user system
-    group system
-    socket secd_ebl_sock stream 0660 system drmrpc
-    socket secd_devsec_sock stream 0660 system drmrpc
-    socket secd_credmgr_sock stream 0660 system drmrpc
+service secd /system/bin/vendor/secd
+    setenv LD_PRELOAD /system/lib64/lib-preload64.so
     class main
+    user root
+    group system drmrpc
+    socket secd_ebl_sock stream 0660 root drmrpc
+    socket secd_devsec_sock stream 0660 root drmrpc
+    socket secd_credmgr_sock stream 0660 root drmrpc
 
 on property:vold.post_fs_data_done=1
     # Generate Bluetooth MAC address file only when /data is ready
