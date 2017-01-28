@@ -26,6 +26,16 @@ on fs
     restorecon_recursive /persist
     write /sys/kernel/boot_adsp/boot 1
 
+on post-fs-data
+
+    #Secd
+    mkdir /data/credmgr 0770 system drmrpc
+    mkdir /mnt/idd 0755 system drmrpc
+    mkdir /mnt/idd/output 0755 system drmrpc
+    mkdir /mnt/idd/socket 0711 system drmrpc
+    mkdir /mnt/idd/startup-prober 0700 root root
+
+
 on boot
     # Bluetooth
     chown system system /sys/devices/soc.0/bcmdhd_wlan.83/macaddr
@@ -170,6 +180,15 @@ service uim /system/bin/brcm-uim-sysfs
     group bluetooth net_bt_admin net_bt
     seclabel u:r:uim:s0
     writepid /dev/cpuset/system-background/tasks
+
+# Start Security Daemon
+service secd /system/vendor/bin/secd
+    user system
+    group system
+    socket secd_ebl_sock stream 0660 system drmrpc
+    socket secd_devsec_sock stream 0660 system drmrpc
+    socket secd_credmgr_sock stream 0660 system drmrpc
+    class main
 
 on property:vold.post_fs_data_done=1
     # Generate Bluetooth MAC address file only when /data is ready
