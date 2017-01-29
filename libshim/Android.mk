@@ -1,4 +1,5 @@
-# Copyright (C) 2014 The Android Open Source Project
+
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,15 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-SONY_ROOT = device/sony/kitakami-common/rootdir
+LOCAL_PATH := $(call my-dir)
 
-# Common config
-include device/sony/kitakami-common/platform.mk
+# Camera
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := \
+    sony_camera_misc.c
 
-# Copying files
-PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/twrp.fstab:recovery/root/etc/twrp.fstab
-
-# Libshim
-PRODUCT_PACKAGES += \
-    libshim_camera
+LOCAL_SHARED_LIBRARIES := libutils libgui liblog libbinder
+LOCAL_MODULE := libshim_camera
+LOCAL_MODULE_TAGS := optional
+LOCAL_32_BIT_ONLY := true
+include $(BUILD_SHARED_LIBRARY)
