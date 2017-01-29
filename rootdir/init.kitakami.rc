@@ -18,6 +18,7 @@ import init.kitakami.pwr.rc
 
 on init
     symlink /dev/block/platform/soc.0/f9824900.sdhci /dev/block/bootdevice
+    mkdir /idd 0751 system system
 
 on fs
     mount_all ./fstab.kitakami
