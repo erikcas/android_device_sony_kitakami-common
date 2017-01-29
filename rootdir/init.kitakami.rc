@@ -17,7 +17,6 @@ import init.common.usb.rc
 import init.kitakami.pwr.rc
 
 on init
-    export LD_SHIM_LIBS /system/vendor/lib/hw/camera.msm.so|libshim_camera.so
     symlink /dev/block/platform/soc.0/f9824900.sdhci /dev/block/bootdevice
     mkdir /idd 0751 system system
 
