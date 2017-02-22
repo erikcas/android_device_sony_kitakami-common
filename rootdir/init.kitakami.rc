@@ -31,10 +31,6 @@ on post-fs-data
 
     #Secd
     mkdir /data/credmgr 0770 system drmrpc
-    mkdir /mnt/idd 0755 system drmrpc
-    mkdir /mnt/idd/output 0755 system drmrpc
-    mkdir /mnt/idd/socket 0711 system drmrpc
-    mkdir /mnt/idd/startup-prober 0700 root root
 
     # RGB breath effect control support
     chown system system /sys/class/leds/red/ramp_step_ms
@@ -237,11 +233,6 @@ service secd /system/vendor/bin/secd
     socket secd_ebl_sock stream 0660 root drmrpc
     socket secd_devsec_sock stream 0660 root drmrpc
     socket secd_credmgr_sock stream 0660 root drmrpc
-
-service iddd /system/vendor/bin/iddd
-    class core
-    user root
-    group system drmrpc
 
 on property:vold.post_fs_data_done=1
     # Generate Bluetooth MAC address file only when /data is ready
